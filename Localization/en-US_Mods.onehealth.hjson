@@ -1,0 +1,20 @@
+Configs: {
+	ItemConfig: {
+		enableOneHealth: {
+			Label: Enable Mod
+			Tooltip: help
+		}
+
+		DisplayName: Mod Config
+
+		lifeMax: {
+			Tooltip: What to set max life to (Cannot go above your max life)
+			Label: Max Life
+		}
+
+		cannotChangeConfigOnServer: {
+			Label: Stop players from changing config on a Server
+			Tooltip: Works with Dedicated and Host & Play
+		}
+	}
+}
