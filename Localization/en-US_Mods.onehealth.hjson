@@ -1,7 +1,7 @@
 Configs: {
 	ItemConfig: {
 		enableOneHealth: {
-			Label: Enable Mod
+			Label: Enable Max Life (This will not disable nohit)
 			Tooltip: help
 		}
 
@@ -10,6 +10,11 @@ Configs: {
 		lifeMax: {
 			Tooltip: What to set max life to (Cannot go above your max life)
 			Label: Max Life
+		}
+
+		nohit: {
+			Label: No-hit
+			Tooltip: Disallows dodges and kills the player instantly on hit
 		}
 
 		cannotChangeConfigOnServer: {

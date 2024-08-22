@@ -2,6 +2,8 @@ Sets max health to 1.
 
 Can Enable/Disable and set a custom max hp in Config.
 
+Has a nohit option. Probably better to use other mods with like guis and stuff idk
+
 Using permanent health buffs (eg. Blood Orange from CalamityMod) will make your hearts disappear, but you will still have 1 hp, you can fix that by setting the max life to 3 in config.
 
 Currently you cannot set your max life to anything higher than your real max life because of how this mod works. So just use it to set it below the usual max life.

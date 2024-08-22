@@ -24,10 +24,14 @@ namespace onehealth
         [Increment(10)]
         public int lifeMax;
 
+        // Nohit mode
+        [DefaultValue(false)] public bool nohit;
+
         // Dont Let People Change Config On a Server
         [DefaultValue(false)] public bool cannotChangeConfigOnServer;
 
-        public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message)
+        [Obsolete]
+        public override bool AcceptClientChanges (ModConfig pendingConfig, int whoAmI, ref string message)
         {
             if (Main.netMode == NetmodeID.Server && cannotChangeConfigOnServer == true)
             {

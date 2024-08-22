@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
 using System.Runtime.InteropServices;
+using Terraria.DataStructures;
 
 namespace onehealth
 {
     internal class onehealthPlayer : ModPlayer
     {
         // Declare
-        int x = 0;
+        bool needHeal = false;
 
-        public override void PostUpdate()
-        {
+        public override void PostUpdate() {
             // Get the config Variables
             var conf = ModContent.GetInstance<ItemConfig>();
-
             if (Player.statLifeMax2 != conf.lifeMax && conf.enableOneHealth == true)
             {
-                x = 0; // int for healing when conf is changed
+                needHeal = true;
 
                 // Set Max Life
                 Player.statLifeMax2 = conf.lifeMax;
@@ -30,11 +29,20 @@ namespace onehealth
                 if (Player.statLife > conf.lifeMax) Player.statLife = conf.lifeMax;
             }
             // Heal the player when the mod is disabled via config
-            if (x < 1 && !conf.enableOneHealth)
+            if (needHeal && !conf.enableOneHealth)
             {
-                x++;
-                Player.Heal(1000);
+                needHeal = false;
+                Player.Heal(Player.statLifeMax);
             }
+        }
+        // Onehit 
+        public override bool ImmuneTo (PlayerDeathReason damageSource, int cooldownCounter, bool dodgeable)	 {
+            var conf = ModContent.GetInstance<ItemConfig>();
+            if(conf.nohit) {
+                dodgeable = false;
+                Player.KillMe(damageSource, Player.statLife, 0, false);
+            }
+            return false;
         }
     }
 }
