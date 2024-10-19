@@ -1,15 +1,15 @@
 Configs: {
 	ItemConfig: {
 		enableOneHealth: {
-			Label: Enable Max Life (This will not disable nohit)
+			Label: Toggle Max Life (This will not affect nohit)
 			Tooltip: help
 		}
 
 		DisplayName: Mod Config
 
 		lifeMax: {
-			Tooltip: What to set max life to (Cannot go above your max life)
 			Label: Max Life
+			Tooltip: What to set max life to (Cannot go above your max life)
 		}
 
 		nohit: {
